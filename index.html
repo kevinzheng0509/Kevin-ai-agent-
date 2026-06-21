@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>KevinOS</title>
+  <meta name="description" content="KevinOS - Kevin 的個人 AI Agent 助手" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">K</div>
+        <div>
+          <h1>KevinOS</h1>
+          <p>Personal AI Agent</p>
+        </div>
+      </div>
+
+      <div class="status-card">
+        <span class="dot"></span>
+        <div>
+          <strong>v4.0 PWA</strong>
+          <p>學業｜留學｜排球｜投資｜勁旅</p>
+        </div>
+      </div>
+
+      <nav class="quick-actions">
+        <button data-prompt="/今日">/今日</button>
+        <button data-prompt="/統計">/統計</button>
+        <button data-prompt="/留學">/留學</button>
+        <button data-prompt="/TOEFL">/TOEFL</button>
+        <button data-prompt="/排球">/排球</button>
+        <button data-prompt="/投資">/投資</button>
+        <button data-prompt="/MLB">/MLB</button>
+        <button data-prompt="/勁旅對決">/勁旅對決</button>
+      </nav>
+
+      <section class="settings">
+        <label for="apiKey">OpenAI API Key</label>
+        <input id="apiKey" type="password" placeholder="sk-..." autocomplete="off" />
+        <button id="saveKey">儲存到本機</button>
+        <small>只存在你的瀏覽器 localStorage，不會上傳到 GitHub。</small>
+      </section>
+    </aside>
+
+    <main class="main">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">KevinOS Dashboard</p>
+          <h2>你的統計系第二大腦</h2>
+          <p>幫你處理課業、研究所申請、排球訓練、投資觀察、MLB 與勁旅對決策略。</p>
+        </div>
+        <button id="clearChat" class="ghost">清除對話</button>
+      </header>
+
+      <section class="cards">
+        <article>
+          <h3>🎓 StudyAgent</h3>
+          <p>統計、回歸、時間序列、R/Python、考前整理。</p>
+        </article>
+        <article>
+          <h3>🇺🇸 GraduateAgent</h3>
+          <p>TOEFL、SOP、CV、作品集、申請規劃。</p>
+        </article>
+        <article>
+          <h3>🏐 VolleyballAgent</h3>
+          <p>彈跳、腳踝穩定、傷害預防、恢復訓練。</p>
+        </article>
+        <article>
+          <h3>🎮 HOFAgent</h3>
+          <p>勁旅對決 HOF 卡評價、培養、兌換與陣容。</p>
+        </article>
+      </section>
+
+      <section class="chat-panel">
+        <div id="chat" class="chat"></div>
+
+        <form id="chatForm" class="composer">
+          <textarea id="message" rows="2" placeholder="問 KevinOS：今天要做什麼？或貼上統計題目、球員卡分析、申請問題..."></textarea>
+          <button type="submit">送出</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
